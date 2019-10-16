@@ -1,0 +1,312 @@
+
+/*---------------------------样式缩写类名------------------------------*/
+.text_bolder{
+  font-weight: bolder;
+}
+.text-bold{
+  font-weight: bold;
+}
+.text-lingray{
+  color: lightgray;
+}
+.start_corlor{  /*字体橙色 暂时只有打星星再用，以后其他地方也再用，把这条注释去掉*/
+  color:rgb(255, 204, 102);
+}
+
+/*-----给vux文本域加边框 -----*/
+.c_textarea_border .weui-cell__bd{
+  border: 1px solid #D9D9D9;
+  padding: 5px;
+}
+
+/*-----自身100%屏宽-----*/
+.c_full_screen{
+  width: 100vw;
+}
+/* 自身百分百父级宽 */
+.c_full_parent{
+  width: 100%;
+}
+/* 该类名下的图片最大百分百父级宽 */
+.c_full_parentImg img{
+  max-width: 100%;
+}
+
+/*input输入框变为只有下边框*/
+/*加给input本身*/
+.c_input_borderB{
+  border: none;
+  border-bottom: 1px solid #747474 ;
+}
+/*加给input父元素*/
+.c_inputParent_borderB input{
+  border: none;
+  border-bottom: 1px solid #747474;
+}
+
+/*-----------------------------------------功能块 组合使用------------------------------------*/
+/*---------------------------公共部分----*/
+.c_header{ /*页面顶部标题*/
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+.c_ListMian{ /*列表页面主体(有新增删除这样的功能区)*/
+  background: #ececec;
+  position: relative;
+  margin-top: 46px;
+  padding-top: 41px;
+  overflow: hidden !important;
+}
+.c_ContentMain{ /*非列表页主体(除了顶部标题什么都没有)*/
+  margin-top: 46px;
+}
+.c_IndexMain{ /*有顶部标题底部导航*/
+  margin: 46px auto 44px;
+}
+/*----------------------清除浮动----*/
+.clearfix {/*加给因浮动撑不出高的元素*/
+  zoom: 1;
+}
+.clearfix:after {
+   content: ".";
+   display: block;
+   height: 0;
+   clear: both;
+   visibility: hidden;
+ }
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.clear{ /*清除元素左右两侧不允许有浮动*/
+  clear: both;
+}
+.clearbt{/*清除元素本身浮动*/
+  float:none;
+}
+
+/*---------------------上传图片功能块 一行三个图片----------*/
+.c_upLoadEditor{
+  padding: 0 15px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.c_upLoadEditor img{
+  max-width: 100%;
+}
+
+.c_upLoadImg_img{/*加给整个功能块*/
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 15px;
+}
+.c_upLoadImg_img img {
+  height: 30vw;
+  width: 30vw;
+  padding: 1vw;
+  box-sizing: border-box;
+}
+
+.c_upLoadImg_imgBody {/*加给所有图片父级*/
+  position: relative;
+}
+.c_upLoadImg_imgBody div {
+  position: absolute;
+  color: red;
+  top: 1vw;
+  right: 1vw;
+  font-size: 22px;
+  padding: 3px;
+}
+
+.c_upLoadImg_img_add {/*有新增按钮加这个*/
+  height: 30vw;
+  width: 30vw;
+  padding: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #808080a3;
+  margin-right: 0;
+}
+
+.c_upLoadImg_img_addInput {/*加给新增按钮的input*/
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+}
+
+/*------------------------------选择随行督学功能块(类似功能)----------*/
+.c_pickBody{  /*加给整改功能块*/
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  overflow:scroll;
+  box-sizing: border-box;
+}
+.c_pickBody_head{ /*加给顶部功能区(选择,搜索)*/
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/*-------------------------------------搜索隐藏快----------*/
+.c_searchBody_content{ /*加给搜索功能块*/
+  width: 95%;
+  position: fixed;
+  z-index: 30;
+  background: white;
+  border-radius: 5px;
+  top:90px;
+  left: 2.5%;
+  box-shadow: 0 0 5px 1px #a8a8a8;
+  color: black;
+}
+.c_searchBody_mask{ /*加给搜索遮罩层*/
+  width: 100vh;
+  height: 100vh;
+  background: rgba(0, 0, 0,0.5);
+  z-index: 21;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.c_searchBody_content .weui-cells{
+  border-radius: 0 0 5px 5px;
+}
+.c_searchBody_content button:last-child{
+  width: 80%;
+  margin: 5px auto 10px !important;
+}
+
+/*-------------------------------增加删除功能块()----------*/
+.c_addDel{
+  position: fixed;
+  top: 46px;
+  width: 100%;
+  z-index: 10;
+}
+.c_addDel .weui-cells{
+  margin-top: 0 ;
+}
+.c_addDel button{
+  margin: 5px 10px !important;
+}
+
+/*---------------------------------卡片列表()----------*/
+.c_card_lb{ /*加给整个卡片元素*/
+  margin: 18px;
+  border-radius: 10px;
+}
+.c_card_lb_button button{ /*加给包含按钮的div*/
+  height: 24px;
+  font-size: 12px;
+  margin: 0 2px !important;
+}
+.c_card_lb .weui-cells{
+  margin-top: 0;
+  border-radius: 10px;
+}
+.c_card_lb .weui-cells .weui-cell::before{
+  border-top: white;
+}
+.c_card_lb .weui-cell{
+  padding: 3px 5px 3px 15px;
+  font-size: 14px;
+}
+.c_card_lb .weui-cells .weui-cell:nth-child(2){
+  padding-top: 10px;
+}
+.c_card_lb .weui-cells .weui-cell:last-child{
+  padding-bottom: 10px;
+}
+.c_card_lb_school{ /*加给卡片标题栏（一般是学校）*/
+    background: #2EB6AA;
+    color: white;
+    height: 35px;
+  }
+.c_card_lb_school .vux-cell-bd{
+  font-weight: bold;
+  font-size: 17px;
+}
+.c_card_lb_school .weui-cell__ft{
+  color: white;
+}
+/*-----------------------------------新增表单()----------*/
+.c_FormAdd .weui-cells{ /*加给整个表单*/
+  margin-top: 0;
+}
+.c_FormAdd_editor { /*加给需要展现自定内容的元素*/
+  padding: 10px 15px;
+  position: relative;
+}
+.c_FormAdd_editor:before{
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 15px !important;
+  width: auto !important;
+  height: 1px;
+  border-top: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  left: 15px;
+}
+/*加给自定义内容的标题*/
+.c_FormAdd_editor_head span{
+  line-height: 1.41176471;
+}
+.c_FormAdd_editor_head span[class *="fa"]{
+  line-height: 1.41176471;
+  color: #C8C8CD;
+}
+.c_FormAdd_editor_content{ /*加给自定义内容的内容区*/
+  margin: 0 15px;
+  box-sizing: border-box;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.c_FormAdd_editor_content>div{
+  padding-left: 0;
+  margin-left: 0;
+}
+.c_FormAdd_editor_content .vue-html5-editor{
+  margin-top: 0;
+}
+.c_FormAdd_editor_content>div:last-child{
+  padding-bottom: 0;
+}
+.c_FormAdd_editor_content img{
+  max-width: 100%;
+}
+.c_FormAdd_editor_content>.vux-x-textarea.weui-cell{
+  padding-left: 0;
+  margin-left: 0;
+}
+.c_FormAdd_editor_content>.vux-cell-box .weui-cell{
+  padding-left: 0;
+  margin-left: 0;
+}
+.c_FormAdd_editor_content_text { /*加给内容区的文本区*/
+  color: #999999;
+  font-size: 17px;
+  word-wrap: break-word;
+}
+
+
+
+
+

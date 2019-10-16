@@ -1,0 +1,45 @@
+/*=============重置浏览器默认样式 ================================*/
+html, body, div, span, h1, h2, h3,
+h4, h5, h6, p, a, img, ol, ul, li{
+    margin: 0;
+    padding: 0;
+}
+
+body{font-family: -apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell","Fira Sans", "Droid Sans", "Helvetica Neue",sans-serif;}
+
+
+html{
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    box-sizing: border-box;
+}
+:focus,input {
+    outline: none;  /*元素周边没有虚拟线*/
+}
+img, iframe {
+    border: none; /*无边框*/
+}
+
+ol, ul {
+    list-style: none; /*列表无修饰符*/
+}
+a{
+    text-decoration: none;  /*无文本修饰*/
+    color: inherit; /*从父元素继承样式*/
+}
+a:link{text-decoration: none!important;  }
+a:visited{text-decoration: none!important;  }
+a:hover{text-decoration: none!important;  }
+a:active{text-decoration: none!important;  }
+a:focus{text-decoration: none!important;  }
+
+/*重置vux样式*/
+.weui-cell:before, .vux-cell-box:before{
+  right: 15px !important;
+  width: auto !important;
+}
+
+
+
+
+
