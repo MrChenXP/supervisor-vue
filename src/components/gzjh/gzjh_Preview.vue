@@ -1,10 +1,13 @@
 <template>
   <div class="c_gzjh_Preview c_ContentMain">
     <!--标题栏-->
+<!--    <x-header class="c_header" :left-options="{preventGoBack: true}" title="详情"-->
+<!--              @on-click-back="$router.push({path: '/b892eba5fae9493189ac81a510bbbd73'})">-->
+<!--    </x-header>-->
+    <!--标题栏-->
     <x-header class="c_header" :left-options="{preventGoBack: true}" title="详情"
-              @on-click-back="$router.push({path: '/b892eba5fae9493189ac81a510bbbd73'})">
+              @on-click-back="$router.push({path: '/09afd6af90df4e988be93c42cd652cad'})">
     </x-header>
-
     <group class="c_gzjh_Preview_bodys">
       <cell title="学校" :value="data.ORG_ID_TARGET_MC"></cell>
       <cell title="督导时段" :value="data.YWSJ"></cell>

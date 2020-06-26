@@ -1,5 +1,5 @@
 // vue版KWZjs,简化了部分pc端kwz的函数,修改部分代码,使其完全符合eslint的规范
-
+// dev true是开发模式 false是线上模式
 import xxtea from './XXTEA'
 import axios from 'axios'
 import { AlertModule } from 'vux'
@@ -7,7 +7,7 @@ import Vue from 'vue'
 import Qs from 'qs'
 
 let KWVue = {
-  dev: true,
+  dev: false,
   token: '',
   jc_isencode: '',
   jc_isencrypt: '',
@@ -442,18 +442,27 @@ let KWVue = {
   // 检查是否登陆
   checkLogin (sf = () => {}, ef = () => {}, vue) {
     let url = KWVue.ajax.url('open/checkLogin')
-    axios.post(url)
-    .then(response => {
-      let datas = response.data.datas
-      if (datas && datas._login_ === '_SUCCESS_') {
-        sf.apply(vue || this, [response])
-      } else {
-        ef.apply(vue || this, [response])
-      }
-    })
-    .catch(error => {
-      ef.apply(vue || this, [error])
-    })
+    if (KWVue.token) {
+      // data.token = KWVue.token
+      // url += url + '?token='
+      url += url.indexOf('?') > 0 ? ('&token=' + KWVue.token) : ('?token=' + KWVue.token)
+      axios.post(url)
+        .then(response => {
+          let datas = response.data.datas
+          if (datas && datas._login_ === '_SUCCESS_') {
+            sf.apply(vue || this, [response])
+          } else {
+            ef.apply(vue || this, [response])
+          }
+        })
+        .catch(error => {
+          ef.apply(vue || this, [error])
+        })
+    } else {
+      window.setTimeout(() => {
+        KWVue.checkLogin(sf, ef, vue)
+      }, 500)
+    }
   },
   // 从html中分解出图片和去掉html标签==》{text: '',imgs: [<img src=xx>],imgSrcs: ['sdf/df/pngss..']}
   spiltHtml (html) {
@@ -550,8 +559,8 @@ let KWVue = {
       html = html.replace(/<rate-yo[^<>]+>/gim, (a) => {
       //   let name = KWVue.formatAttrFromTag(a, 'name')
       //   let dataCal = KWVue.formatAttrFromTag(a, 'data-cal')
-      // 转换成dom文档
-        let oHtml = new DOMParser().parseFromString(html, 'text/xml')
+        // 转换成dom文档
+        let oHtml = new DOMParser().parseFromString(html, 'text/html')
         let rateYo = oHtml.querySelectorAll('rate-yo')[i]
         let name = rateYo.getAttribute('name')
         let dataCal = rateYo.getAttribute('type') ? rateYo.getAttribute('type') + '-' + rateYo.getAttribute('rel') : ''
@@ -562,6 +571,11 @@ let KWVue = {
         dataOp[name + 'Cls3'] = value > 2 ? 'fa fa-2x fa-star start_corlor' : 'fa fa-2x fa-star-o'
         dataOp[name + 'Cls4'] = value > 3 ? 'fa fa-2x fa-star start_corlor' : 'fa fa-2x fa-star-o'
         dataOp[name + 'Cls5'] = value > 4 ? 'fa fa-2x fa-star start_corlor' : 'fa fa-2x fa-star-o'
+        dataOp[name + 'Cls6'] = value > 5 ? 'fa fa-2x fa-star start_corlor' : 'fa fa-2x fa-star-o'
+        dataOp[name + 'Cls7'] = value > 6 ? 'fa fa-2x fa-star start_corlor' : 'fa fa-2x fa-star-o'
+        dataOp[name + 'Cls8'] = value > 7 ? 'fa fa-2x fa-star start_corlor' : 'fa fa-2x fa-star-o'
+        dataOp[name + 'Cls9'] = value > 8 ? 'fa fa-2x fa-star start_corlor' : 'fa fa-2x fa-star-o'
+        dataOp[name + 'Cls10'] = value > 9 ? 'fa fa-2x fa-star start_corlor' : 'fa fa-2x fa-star-o'
         dataOp.pgData[name] = value
         if (dataCal) {
           let columArray = dataCal.split('-')
@@ -582,14 +596,24 @@ let KWVue = {
         <span :class="${name + 'Cls2'}"></span>
         <span :class="${name + 'Cls3'}"></span>
         <span :class="${name + 'Cls4'}"></span>
-        <span :class="${name + 'Cls5'}"></span></div>`
+        <span :class="${name + 'Cls5'}"></span>
+        <span :class="${name + 'Cls6'}"></span>
+        <span :class="${name + 'Cls7'}"></span>
+        <span :class="${name + 'Cls8'}"></span>
+        <span :class="${name + 'Cls9'}"></span>
+        <span :class="${name + 'Cls10'}"></span></div>`
         } else {
           return `<div>
         <span @click="star(1, '${name}')" :class="${name + 'Cls1'}"></span>
         <span @click="star(2, '${name}')" :class="${name + 'Cls2'}"></span>
         <span @click="star(3, '${name}')" :class="${name + 'Cls3'}"></span>
         <span @click="star(4, '${name}')" :class="${name + 'Cls4'}"></span>
-        <span @click="star(5, '${name}')" :class="${name + 'Cls5'}"></span></div>`
+        <span @click="star(5, '${name}')" :class="${name + 'Cls5'}"></span>
+        <span @click="star(6, '${name}')" :class="${name + 'Cls6'}"></span>
+        <span @click="star(7, '${name}')" :class="${name + 'Cls7'}"></span>
+        <span @click="star(8, '${name}')" :class="${name + 'Cls8'}"></span>
+        <span @click="star(9, '${name}')" :class="${name + 'Cls9'}"></span>
+        <span @click="star(10, '${name}')" :class="${name + 'Cls10'}"></span></div>`
         }
       })
       // 创建模板对象
@@ -607,10 +631,11 @@ let KWVue = {
               }
             }
           },
-          // 计算步骤2
+          // 计算步骤2 参数: 计算框 的name值
           cal (col) {
             let config = this.config[col]
             if (config) {
+              // expression:得到计算方式以及设计计算的星星name值
               let expression = config.expression
               let type = config.type
               let columnLengh = expression.length
@@ -629,8 +654,9 @@ let KWVue = {
               this.pgData[targetName] = value
             }
           },
+          //  好像是 重新渲染星星 白色黄色互换 2020-3-12
           lightStar (name, n, clsIn) {
-            for (let i = 1; i <= 5; i++) {
+            for (let i = 1; i <= 10; i++) {
               if (i > n) {
                 this[name + 'Cls' + i] = 'fa fa-2x fa-star-o'
               } else {
@@ -638,6 +664,7 @@ let KWVue = {
               }
             }
           },
+          // 星星的点击事件
           star (n, name, FZName) {
             let key = name + 'Cls' + n
             let cls = this[key]
@@ -647,6 +674,7 @@ let KWVue = {
             // 算分
             this.calData(name)
           },
+          // 保存
           saveData (pVue, cb = () => {}) {
             this.$kwz.ajax.ajaxUrl({
               url: 'jc_pgbzmx/doAddOrUpdate/DDJL',
@@ -698,6 +726,16 @@ let KWVue = {
         vHtml.push(value > 3 ? 'fa fa-2x fa-star start_corlor' : 'fa fa-2x fa-star-o')
         vHtml.push('"></span><span class="')
         vHtml.push(value > 4 ? 'fa fa-2x fa-star start_corlor' : 'fa fa-2x fa-star-o')
+        vHtml.push('"></span><span class="')
+        vHtml.push(value > 5 ? 'fa fa-2x fa-star start_corlor' : 'fa fa-2x fa-star-o')
+        vHtml.push('"></span><span class="')
+        vHtml.push(value > 6 ? 'fa fa-2x fa-star start_corlor' : 'fa fa-2x fa-star-o')
+        vHtml.push('"></span><span class="')
+        vHtml.push(value > 7 ? 'fa fa-2x fa-star start_corlor' : 'fa fa-2x fa-star-o')
+        vHtml.push('"></span><span class="')
+        vHtml.push(value > 8 ? 'fa fa-2x fa-star start_corlor' : 'fa fa-2x fa-star-o')
+        vHtml.push('"></span><span class="')
+        vHtml.push(value > 9 ? 'fa fa-2x fa-star start_corlor' : 'fa fa-2x fa-star-o')
         vHtml.push('"></span>')
         return vHtml.join('')
       })
@@ -788,6 +826,7 @@ let KWVue = {
     })
   }
 }
+
 
 KWVue.initVisit()
 KWVue.initToken()

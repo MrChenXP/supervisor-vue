@@ -1,10 +1,13 @@
 <template>
   <div class="c_ddjs_Preview c_ContentMain">
     <!--标题栏-->
+<!--    <x-header class="c_header" :left-options="{preventGoBack: true}" title="督导预览"-->
+<!--              @on-click-back="$router.push({path: '/ebc60e699bc642a1871f1e017b979483'})">-->
+<!--    </x-header>-->
+    <!-- 广西的 -->
     <x-header class="c_header" :left-options="{preventGoBack: true}" title="督导预览"
-              @on-click-back="$router.push({path: '/ebc60e699bc642a1871f1e017b979483'})">
+              @on-click-back="$router.push({path: '/f53898d10997419ca2a8185dee802d1b'})">
     </x-header>
-
     <div class="c_ddjs_Preview_body">
       <!--标题-->
       <div class="c_ddjs_Preview_title">

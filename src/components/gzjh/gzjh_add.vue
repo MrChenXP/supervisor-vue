@@ -1,14 +1,21 @@
 <template>
   <div class="c_gzjh_add c_ContentMain">
     <!--标题栏-->
+<!--    <x-header class="c_header" :left-options="{preventGoBack: true}"-->
+<!--              @on-click-back="$router.push({path: '/b892eba5fae9493189ac81a510bbbd73'})">-->
+<!--      {{title}}-->
+<!--      <a slot="right" @click="doSave" v-if="saveBtnShow" v-show="getPermission('dd_gzap/doAdd/DDGZAP')">-->
+<!--        <span class="fa fa-save">&nbsp;保存</span>-->
+<!--      </a>-->
+<!--    </x-header>-->
+    <!--  广西  -->
     <x-header class="c_header" :left-options="{preventGoBack: true}"
-              @on-click-back="$router.push({path: '/b892eba5fae9493189ac81a510bbbd73'})">
+              @on-click-back="$router.push({path: '/09afd6af90df4e988be93c42cd652cad'})">
       {{title}}
       <a slot="right" @click="doSave" v-if="saveBtnShow" v-show="getPermission('dd_gzap/doAdd/DDGZAP')">
         <span class="fa fa-save">&nbsp;保存</span>
       </a>
     </x-header>
-
     <!--计划列表-->
     <group class="c_FormAdd">
       <cell title="学校" :value="formData.xxName" v-if="contentId"></cell>
@@ -184,10 +191,11 @@ export default {
       // 评估标准
       this.$kwz.ajax.ajaxUrl({
         url: 'dd_gzap/doSelectPgbz/DDPGBZ',
+        // url:'jc_pgbz/doPageList/DDPGBZ',
         type: 'POST',
         data: {
           'YWLX': 'DDPGBZ',
-          'DDPGBZ': 'DDPGBZ'
+          'DDPGBZ': 'DDPGBZ',
         },
         vue: this,
         then (response) {
@@ -447,7 +455,10 @@ export default {
         vue: this,
         then (response) {
           this.$kwz.alert('保存成功')
-          this.$router.push({path: '/b892eba5fae9493189ac81a510bbbd73'})
+          // 本地
+          // this.$router.push({path: '/b892eba5fae9493189ac81a510bbbd73'})
+          // 广西
+          this.$router.push({path: '/09afd6af90df4e988be93c42cd652cad'})
         }
       })
     },
@@ -472,10 +483,14 @@ export default {
         vue: this,
         then (response) {
           this.$kwz.alert('保存成功')
-          this.$router.push({path: '/b892eba5fae9493189ac81a510bbbd73'})
+          // 本地
+          // this.$router.push({path: '/b892eba5fae9493189ac81a510bbbd73'})
+          // 广西
+          this.$router.push({path: '/09afd6af90df4e988be93c42cd652cad'})
         }
       })
     },
+    // 新增要用的data数据
     commonParam () {
       let content = [this.formData.ddsxTxt]
       if (this.ddjsImageList.length > 0) {

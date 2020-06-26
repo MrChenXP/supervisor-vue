@@ -1,13 +1,24 @@
 <template>
   <div class="c_zgtz_add c_ContentMain">
     <!--标题栏-->
-    <x-header class="c_header" :left-options="{preventGoBack: true}" @on-click-back="$router.push({path: '/3758a16aa4e14b3d87bb1f9c7e2fc509'})">
+<!--    <x-header class="c_header" :left-options="{preventGoBack: true}" @on-click-back="$router.push({path: '/3758a16aa4e14b3d87bb1f9c7e2fc509'})">-->
+<!--      新增整改通知书-->
+<!--      <a slot="right" @click="fn_ddjs_send">-->
+<!--        <span v-if="!data.ZGXSID" class="fa fa-send" -->
+<!--          v-show="getPermission('dd_zgxs/doAddtzyj')">&nbsp;发送</span>-->
+<!--        <span class="fa fa-send" v-else -->
+<!--          v-show="getPermission('dd_zgxs/zgtz_sh')">&nbsp;审核</span>-->
+<!--      </a>-->
+<!--    </x-header>-->
+
+    <!--广西的-->
+    <x-header class="c_header" :left-options="{preventGoBack: true}" @on-click-back="$router.push({path: '/22f9ea002d1841459915b57d043891a3'})">
       新增整改通知书
       <a slot="right" @click="fn_ddjs_send">
-        <span v-if="!data.ZGXSID" class="fa fa-send" 
-          v-show="getPermission('dd_zgxs/doAddtzyj')">&nbsp;发送</span>
-        <span class="fa fa-send" v-else 
-          v-show="getPermission('dd_zgxs/zgtz_sh')">&nbsp;审核</span>
+        <span v-if="!data.ZGXSID" class="fa fa-send"
+              v-show="getPermission('dd_zgxs/doAddtzyj')">&nbsp;发送</span>
+        <span class="fa fa-send" v-else
+              v-show="getPermission('dd_zgxs/zgtz_sh')">&nbsp;审核</span>
       </a>
     </x-header>
 

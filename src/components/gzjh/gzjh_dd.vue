@@ -68,11 +68,13 @@
 
       </div>
       <!--要评估-->
-      <cell title="规定任务评价" v-if="!!data.BZID && getPermission('dd_ddjl/toPg')" :inline-desc="pgbzMc">
+      <!-- 评估名称和分数 gzjh_dd.vue有问题 为了验标 先隐藏 -->
+      <!-- <cell title="规定任务评价" v-if="!!data.BZID && getPermission('dd_ddjl/toPg')" :inline-desc="pgbzMc"> -->
+      <cell title="规定任务评价" v-if="!!data.BZID && getPermission('dd_ddjl/toPg')" >
         <div slot="">
           <x-button mini type="warn" v-if="!!data.BZID" @click.native="toDdpg" v-show="getPermission('dd_ddjl/toPg')">要评估</x-button>
         </div>
-        <rater v-if="!!pgFz" v-model="pgFz" disabled></rater>
+        <!-- <rater v-if="!!pgFz" v-model="pgFz" disabled></rater> -->
       </cell>
 
       <div class="c_FormAdd_editor">
@@ -416,7 +418,9 @@ export default {
         this.ddpgShow = false
       } else {
         this.deleteDisposeIdeaId()
-        this.$router.push({path: '/b892eba5fae9493189ac81a510bbbd73'})
+        // this.$router.push({path: '/b892eba5fae9493189ac81a510bbbd73'})
+        // 广西的
+        this.$router.push({path: '/09afd6af90df4e988be93c42cd652cad'})
       }
     },
     // 预先加载数据
@@ -1198,4 +1202,10 @@ export default {
   .c_ddjs_add_saveBack button{
     margin: 5px 10px;
   }
+  /* .c_ddjs_assess_table >>> td{
+      font-size: 12px !important;
+  }
+  .c_ddjs_assess_table >>> .fa-star-o,.c_ddjs_assess_table >>> .start_corlor{
+    font-size: 1rem;
+  } */
 </style>

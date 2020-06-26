@@ -1,8 +1,10 @@
 <template>
   <div class="c_ddjs_zgtzs c_ContentMain">
     <!--标题栏-->
-    <x-header class="c_header" :left-options="{preventGoBack: true}" @on-click-back="$router.push({path: '/ebc60e699bc642a1871f1e017b979483'})">
-      督导整改通知书
+<!--    <x-header class="c_header" :left-options="{preventGoBack: true}" @on-click-back="$router.push({path: '/ebc60e699bc642a1871f1e017b979483'})">-->
+    <x-header class="c_header" :left-options="{preventGoBack: true}" @on-click-back="$router.push({path: '/f53898d10997419ca2a8185dee802d1b'})">
+
+    督导整改通知书
       <!--<a slot="right" @click="doAdd">-->
         <!--<span class="fa fa-save">&nbsp;保存</span>-->
       <!--</a>-->

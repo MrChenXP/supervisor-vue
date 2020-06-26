@@ -62,7 +62,7 @@ export default {
       }, this)
     },
     toGetQyWxCode () {
-      if (!this.$kwz.ajaxInited) {
+      if (!this.$kwz.ajax.ajaxInited) {
         let _this = this
         setTimeout(function () {
           _this.toGetQyWxCode()
@@ -78,6 +78,9 @@ export default {
   //       广东dc(广东省教育督导)
   //         const redirectUrl = 'http://dcwx.gdedu.gov.cn/' // 公众号返回路径
   //         const corpid = 'wwc7d621daaf66bf60' // 企业号corpid
+  //       广西
+          const redirectUrl = 'http://gxzrdx.gxyshs.site/' // 公众号返回路径
+          const corpid = 'ww1dffd7b8884e84f7' // 企业号corpid
             // 获取用户信息范围
           // const redirectUrl = this.$kwz.domain // domain
           // const corpid = this.$kwz.corid // corid

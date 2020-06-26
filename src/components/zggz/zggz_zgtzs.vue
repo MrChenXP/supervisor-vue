@@ -1,7 +1,17 @@
 <template>
   <div class="c_zggz_zgtzs c_ContentMain">
     <!--标题栏-->
-    <x-header class="c_header" :left-options="{preventGoBack: true}" @on-click-back="$router.push({path: '/3758a16aa4e14b3d87bb1f9c7e2fc509'})">
+<!--    <x-header class="c_header" :left-options="{preventGoBack: true}" @on-click-back="$router.push({path: '/3758a16aa4e14b3d87bb1f9c7e2fc509'})">-->
+<!--      整改通知书-->
+<!--      <a slot="right" @click="fn_zggz_zgtzs_dispose" v-if="clickSHOw" v-show="getPermission('dd_zgxs/doUpdate/ZGTZ')">-->
+<!--        <span class="fa fa-save">&nbsp;处理</span>-->
+<!--      </a>-->
+<!--      <a slot="right" @click="changeStatue('6')" v-if="data.CLZTDM < '6'" v-show="this.SF === 'dx' && getPermission('dd_zgxs/doUpdate/ZGTZ')">-->
+<!--        <span class="fa fa-save">&nbsp;确认整改完成</span>-->
+<!--      </a>-->
+<!--    </x-header>-->
+    <!--广西的-->
+    <x-header class="c_header" :left-options="{preventGoBack: true}" @on-click-back="$router.push({path: '/22f9ea002d1841459915b57d043891a3'})">
       整改通知书
       <a slot="right" @click="fn_zggz_zgtzs_dispose" v-if="clickSHOw" v-show="getPermission('dd_zgxs/doUpdate/ZGTZ')">
         <span class="fa fa-save">&nbsp;处理</span>

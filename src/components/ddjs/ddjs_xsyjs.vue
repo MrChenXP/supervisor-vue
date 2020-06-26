@@ -1,10 +1,13 @@
 <template>
   <div class="c_ddjs_xsyj c_ContentMain">
     <!--标题栏-->
-    <x-header class="c_header" :left-options="{preventGoBack: true}" @on-click-back="$router.push({path: '/ebc60e699bc642a1871f1e017b979483'})">
+<!--    <x-header class="c_header" :left-options="{preventGoBack: true}" @on-click-back="$router.push({path: '/ebc60e699bc642a1871f1e017b979483'})">-->
+<!--      督导协商意见书-->
+<!--    </x-header>-->
+    <!--  广西  -->
+    <x-header class="c_header" :left-options="{preventGoBack: true}" @on-click-back="$router.push({path: '/f53898d10997419ca2a8185dee802d1b'})">
       督导协商意见书
     </x-header>
-
     <!--意见内容-->
     <group label-width="5em" title="意见内容" class="c_ddjs_xsyj_info">
       <cell title="编号" :value="data.BH" value-align="left"></cell>

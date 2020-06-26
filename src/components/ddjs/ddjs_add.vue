@@ -72,11 +72,13 @@
 
       </div>
       <!--要评估-->
-      <cell title="规定任务评价" v-if="!!data.BZID && getPermission('dd_ddjl/toPg')" :inline-desc="pgbzMc">
+      <!-- 评估名称和分数 gzjh_dd.vue有问题 为了验标 先隐藏 -->
+      <!-- <cell title="规定任务评价" v-if="!!data.BZID && getPermission('dd_ddjl/toPg')" :inline-desc="pgbzMc"> -->
+      <cell title="规定任务评价" v-if="!!data.BZID && getPermission('dd_ddjl/toPg')" >
         <div slot="">
           <x-button mini type="warn" v-if="!!data.BZID" @click.native="toDdpg" v-show="getPermission('dd_ddjl/toPg')">要评估</x-button>
         </div>
-        <rater v-if="!!pgFz" v-model="pgFz" disabled></rater>
+        <!-- <rater v-if="!!pgFz" v-model="pgFz" disabled></rater> -->
       </cell>
 
       <div class="c_FormAdd_editor">
@@ -484,7 +486,8 @@ export default {
         if (this.$route.query.isAdd) {
           this.deleteDisposeIdeaId()
         }
-        this.$router.push({path: '/ebc60e699bc642a1871f1e017b979483'})
+        // this.$router.push({path: '/ebc60e699bc642a1871f1e017b979483'})
+        this.$router.push({path: '/f53898d10997419ca2a8185dee802d1b'}) // 广西
       }
     },
     // 事先加载数据 根据路由的参数值判断(编辑/新增)

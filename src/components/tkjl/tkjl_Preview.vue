@@ -1,8 +1,12 @@
 <template>
   <div class="c_tkjl_Preview c_ContentMain">
     <!--标题栏-->
+<!--    <x-header class="c_header" :left-options="{preventGoBack: true}" title="详情"-->
+<!--              @on-click-back="$router.push({path: '/cd5235ad9e2d463a9af919de06dcfb06'})">-->
+<!--    </x-header>-->
+    <!--广西的-->
     <x-header class="c_header" :left-options="{preventGoBack: true}" title="详情"
-              @on-click-back="$router.push({path: '/cd5235ad9e2d463a9af919de06dcfb06'})">
+              @on-click-back="$router.push({path: '/ce050b1fa4514189aa92852ae2e032de'})">
     </x-header>
     <group v-if="query.isNew === 1" class="c_FormAdd">
       <cell title="学校" :value="formData.MB_ORG_MC"></cell>

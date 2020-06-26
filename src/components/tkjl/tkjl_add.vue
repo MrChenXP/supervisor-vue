@@ -1,14 +1,21 @@
 <template>
   <div class="c_tkjl_add c_ContentMain">
     <!--标题栏-->
+<!--    <x-header class="c_header" :left-options="{preventGoBack: true}"-->
+<!--              @on-click-back="$router.push({path: '/cd5235ad9e2d463a9af919de06dcfb06'})">-->
+<!--      {{title}}-->
+<!--      <a slot="right" @click="doSave" v-show="getPermission('jc_pgbzmx/doAddTkjl/TKJL')">-->
+<!--        <span class="fa fa-save">&nbsp;保存</span>-->
+<!--      </a>-->
+<!--    </x-header>-->
+    <!--广西的-->
     <x-header class="c_header" :left-options="{preventGoBack: true}"
-              @on-click-back="$router.push({path: '/cd5235ad9e2d463a9af919de06dcfb06'})">
+              @on-click-back="$router.push({path: '/ce050b1fa4514189aa92852ae2e032de'})">
       {{title}}
       <a slot="right" @click="doSave" v-show="getPermission('jc_pgbzmx/doAddTkjl/TKJL')">
         <span class="fa fa-save">&nbsp;保存</span>
       </a>
     </x-header>
-
     <!--记录列表-->
     <group class="c_FormAdd">
       <cell title="学校" :value="formData.MB_ORG_MC" v-if="formData.MXID"></cell>

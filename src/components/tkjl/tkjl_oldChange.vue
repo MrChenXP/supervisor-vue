@@ -1,8 +1,15 @@
 <template>
   <div class="c_oldChange c_ContentMain">
     <!--标题栏-->
+<!--    <x-header class="c_header" :left-options="{preventGoBack: true}" title="修改听课记录"-->
+<!--              @on-click-back="$router.push({path: '/cd5235ad9e2d463a9af919de06dcfb06'})">-->
+<!--      <a slot="right" @click="doSave">-->
+<!--        <span class="fa fa-save">&nbsp;保存</span>-->
+<!--      </a>-->
+<!--    </x-header>-->
+    <!--广西的-->
     <x-header class="c_header" :left-options="{preventGoBack: true}" title="修改听课记录"
-              @on-click-back="$router.push({path: '/cd5235ad9e2d463a9af919de06dcfb06'})">
+              @on-click-back="$router.push({path: '/ce050b1fa4514189aa92852ae2e032de'})">
       <a slot="right" @click="doSave">
         <span class="fa fa-save">&nbsp;保存</span>
       </a>

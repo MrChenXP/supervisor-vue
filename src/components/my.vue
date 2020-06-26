@@ -2,8 +2,11 @@
   <div class="my c_IndexMain">
 
     <!--标题栏-->
+<!--    <x-header class="c_header" :left-options="{showBack: false}" >-->
+<!--      江西省督导平台-->
+<!--    </x-header>-->
     <x-header class="c_header" :left-options="{showBack: false}" >
-      江西省督导平台
+      广西省督导平台
     </x-header>
     <!--底部导航-->
     <tab class="c_my_bottom_tab" custom-bar-width="0">

@@ -2,8 +2,14 @@
   <div class="index c_IndexMain">
 
     <!--标题栏-->
+<!--    <x-header class="c_header" :left-options="{showBack: false}" >-->
+<!--      江西省督导平台-->
+<!--      <a slot="right" @click="$router.push({path: '/workspace'})">-->
+<!--        <span class="fa fa-exchange"></span>-->
+<!--      </a>-->
+<!--    </x-header>-->
     <x-header class="c_header" :left-options="{showBack: false}" >
-      江西省督导平台
+      广西省督导平台
       <a slot="right" @click="$router.push({path: '/workspace'})">
         <span class="fa fa-exchange"></span>
       </a>

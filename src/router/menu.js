@@ -21,6 +21,9 @@ import tkjlAdd from '@/components/tkjl/tkjl_add'
 import tkjlPreview from '@/components/tkjl/tkjl_Preview'
 import tkjlOldChange from '@/components/tkjl/tkjl_oldChange'
 
+import xxglddb from '@/components/xxglddb/xxglddb'
+import xxglddbPreview from '@/components/xxglddb/xxglddb_Preview'
+
 /*
 注意，配置菜单的时候请注意以下几点：
 1、menus最外层菜单你必须配置menuid，不用配置path
@@ -29,7 +32,8 @@ import tkjlOldChange from '@/components/tkjl/tkjl_oldChange'
 let menus = [
   {
     name: 'ddjs',
-    menuid: 'ebc60e699bc642a1871f1e017b979483',
+    // menuid: 'ebc60e699bc642a1871f1e017b979483',
+    menuid: 'f53898d10997419ca2a8185dee802d1b', // 广西的PRO_ID
     component: ddjs,
     desc: '督导纪实',
     childrenMenu: [
@@ -64,7 +68,8 @@ let menus = [
   },
   {
     name: 'gzjh',
-    menuid: 'b892eba5fae9493189ac81a510bbbd73',
+    // menuid: 'b892eba5fae9493189ac81a510bbbd73',
+    menuid: '09afd6af90df4e988be93c42cd652cad', // 广西的PRO_ID 广西叫督导计划
     component: gzjh,
     desc: '工作计划',
     childrenMenu: [{
@@ -91,7 +96,8 @@ let menus = [
   },
   {
     name: 'zggz',
-    menuid: '3758a16aa4e14b3d87bb1f9c7e2fc509',
+    // menuid: '3758a16aa4e14b3d87bb1f9c7e2fc509',
+    menuid: '22f9ea002d1841459915b57d043891a3', // 广西的PRO_ID
     component: zggz,
     desc: '整改工作',
     childrenMenu: [{
@@ -130,7 +136,8 @@ let menus = [
   },
   {
     name: 'tkjl',
-    menuid: 'cd5235ad9e2d463a9af919de06dcfb06',
+    // menuid: 'cd5235ad9e2d463a9af919de06dcfb06',
+    menuid: 'ce050b1fa4514189aa92852ae2e032de', // 广西的PRO_ID
     component: tkjl,
     desc: '听课记录',
     childrenMenu: [
@@ -151,6 +158,24 @@ let menus = [
         name: 'tkjl-oldChange',
         component: tkjlOldChange,
         desc: '听课记录老记录修改'
+      }
+    ],
+    meta: {
+      title: ''
+    }
+  },
+  {
+    name: 'xxglddb',
+    // menuid: '6fafebf5360b4e69abb587097c8d4965id',
+    menuid: '2d370b7696b04f5298826f17e67f8093', // 广西的PRO_ID
+    component: xxglddb,
+    desc: '学校管理督导版',
+    childrenMenu: [
+      {
+        path: '/xxglddb/preview',
+        name: 'xxglddb-preview',
+        component: xxglddbPreview,
+        desc: '学校管理督导版预览'
       }
     ],
     meta: {

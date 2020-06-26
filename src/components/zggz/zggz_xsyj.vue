@@ -9,10 +9,19 @@
     </x-header>
 
     <!--标题组-->
+<!--    <div class="c_zggz_xsyj_tabs">-->
+<!--      <sticky :offset="46" :check-sticky-support="false">-->
+<!--        <tab :animate=false>-->
+<!--          <tab-item @on-item-click="$router.push({path:'/3758a16aa4e14b3d87bb1f9c7e2fc509'})">整改</tab-item>-->
+<!--          <tab-item selected>协商</tab-item>-->
+<!--        </tab>-->
+<!--      </sticky>-->
+<!--    </div>-->
+<!--    广西的-->
     <div class="c_zggz_xsyj_tabs">
       <sticky :offset="46" :check-sticky-support="false">
         <tab :animate=false>
-          <tab-item @on-item-click="$router.push({path:'/3758a16aa4e14b3d87bb1f9c7e2fc509'})">整改</tab-item>
+          <tab-item @on-item-click="$router.push({path:'/22f9ea002d1841459915b57d043891a3'})">整改</tab-item>
           <tab-item selected>协商</tab-item>
         </tab>
       </sticky>
